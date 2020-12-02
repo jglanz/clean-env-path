@@ -1,0 +1,22 @@
+{
+  "name": "clean-env-path",
+  "version": "1.0.0",
+  "description": "Creates a unique, clean env.PATH value you can re-export - for the situation where you've got 24years of dot files that all append to PATH, and several of them create duplicates",
+  "main": "./bin/clean-path.js",
+  "repository": {
+    "url": "https://github.com/jglanz/clean-env-path",
+    "type": "github"
+  },
+  "bin": {
+    "clean-env-path": "./bin/clean-path.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jonathan.glanz@gmail.com",
+  "license": "MIT"
+}
