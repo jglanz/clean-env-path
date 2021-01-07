@@ -1,6 +1,6 @@
 {
   "name": "clean-env-path",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Creates a unique, clean env.PATH value you can re-export - for the situation where you've got 24years of dot files that all append to PATH, and several of them create duplicates",
   "main": "./bin/clean-path.js",
   "repository": {
