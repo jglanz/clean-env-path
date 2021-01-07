@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 
 const
-	Path = require("path"),
+  Path = require("path"),
+  Fs = require("fs"),
 	path = process.env.PATH,
 	_ = require("lodash"),
-	parts = _.flatMap(path.split(Path.delimiter), part => part.split(" ")),
-	cleanParts = _.uniq(parts).sort()
+  parts = _.flatMap(path.split(Path.delimiter), part => part.split(" "))
+  .filter(dir => Fs.existsSync(dir) && Fs.lstatSync(dir).isDirectory === true),
+  
+	cleanParts = _.uniq(parts)
 
 // console.log(`clean=${cleanParts.length},orig=${parts.length}`)
 
