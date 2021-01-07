@@ -6,7 +6,14 @@ const
 	path = process.env.PATH,
 	_ = require("lodash"),
   parts = _.flatMap(path.split(Path.delimiter), part => part.split(" "))
-  .filter(dir => Fs.existsSync(dir) && Fs.lstatSync(dir).isDirectory === true),
+  .filter(dir => {
+		const 
+			exists = Fs.existsSync(dir),		
+			stats = exists && Fs.statSync(dir),
+			isDir = stats &&  stats.isDirectory()
+			
+		return exists && isDir
+	}),
   
 	cleanParts = _.uniq(parts)
 
